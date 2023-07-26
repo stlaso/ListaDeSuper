@@ -58,9 +58,9 @@ export function Header() {
           <Box className="ContenedorForm">
             <form  className="Form" onSubmit={crear}>
               <p >Ingrese nombre del producto</p>
-              <input id="nombre" type="text" />
+              <input id="nombre" required  type="text" />
               <p>Ingrese precio</p>
-              <input id="precio" type="text" /> <br />
+              <input id="precio" required  type="number" /> <br />
               <Button  variant="contained" type="submit">Crear Producto</Button>
             </form>
           </Box>
