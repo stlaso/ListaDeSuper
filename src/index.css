@@ -1,0 +1,82 @@
+
+body {
+  margin: 0;
+  padding: 0;
+  background-image: url('./img/op 2.jpg');
+  background-size: 100% 100%; 
+  background-repeat: no-repeat;
+  background-attachment: fixed; 
+}
+
+
+html, body {
+  height: 100%;
+  font-family: 'Shantell Sans', cursive;
+  font-family: 'Ysabeau SC', sans-serif;
+}
+
+.botonInicio
+{
+  margin: 8px !important;
+  background-color: #CC48E3 !important;
+  
+}
+.navBarra
+{
+  margin: 0 0 50px 0 !important;
+  background-color: #B1E413 !important;
+}
+
+.iconButton {
+  color: #CC48E3 !important;
+}
+
+.title {
+  flex-grow: 1;
+  color: #CC48E3;
+}
+
+
+.ContenedorForm {
+  width: 400px;
+  height: 350px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #B1E413;
+  border-radius: 25px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.7);
+}
+
+.Form {
+  margin-bottom: 40px;
+}
+
+.Form button {
+  background-color: #CC48E3;
+  margin-top: 25px;
+}
+
+.tableBox {
+  width: 800px;
+  height: 400px;
+  border-radius: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tableBox table {
+  max-height: 600px;
+}
+
+.TablaRow
+{
+  background-color:#B1E413;
+}
+
+
+.tableBox button {
+  background-color: #CC48E3;
+}
