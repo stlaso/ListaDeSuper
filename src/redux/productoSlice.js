@@ -11,11 +11,12 @@ export const productoSlice = createSlice({
   initialState,
   reducers: {
     addProducto: (state, action) => {
-      const { nombre, precio, status } = action.payload;
+      const { nombre, precio, cantidad,status } = action.payload;
       const nuevoProducto = {
         id: lastId + 1,
         nombre: nombre,
         precio: precio,
+        cantidad:cantidad,
         status: status,
       };
       lastId += 1;

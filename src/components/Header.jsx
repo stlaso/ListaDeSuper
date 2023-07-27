@@ -1,4 +1,5 @@
 import { useSelector } from "react-redux"
+import React, { useState } from 'react';
 import { addProducto, changeStatus,DeleteProducto  } from "../redux/productoSlice";
 import { useDispatch } from "react-redux";
 import Grid from '@mui/material/Grid'; 
@@ -19,6 +20,10 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 
 export function Header() {
 
+  const [nombre, setNombre] = useState('');
+  const [precio, setPrecio] = useState('');
+  const [cantidad, setCantidad] = useState('');
+
   const theme = createTheme({
     typography: {
       fontFamily: [' "Ysabeau SC"', 'sans-serif'].join(','),
@@ -33,11 +38,14 @@ export function Header() {
     event.preventDefault();
     const datos=
     {
-      nombre: event.target.nombre.value,
-      precio: event.target.precio.value,
+      nombre: nombre,
+      precio: precio,
+      cantidad: cantidad,
       status: false,
     };
-
+    setNombre("")
+    setCantidad("")
+    setPrecio("")
     dispatch(addProducto(datos));
   }
 
@@ -58,10 +66,12 @@ export function Header() {
           <Box className="ContenedorForm">
             <form  className="Form" onSubmit={crear}>
               <p >Ingrese nombre del producto</p>
-              <input id="nombre" required  type="text" />
+              <input id="nombre" required value={nombre} type="text" onChange={(e) => setNombre(e.target.value)}/>
               <p>Ingrese precio</p>
-              <input id="precio" required  type="number" /> <br />
-              <Button  variant="contained" type="submit">Crear Producto</Button>
+              <input id="precio" required value={precio} type="number"  min="0"  onChange={(e) => setPrecio(e.target.value)}/> <br />
+              <p>Ingrese cantidad</p>
+              <input id="cantidad" required value={cantidad} type="number"  min="1" onChange={(e) => setCantidad(e.target.value)}/> <br />
+              <Button variant="contained" type="submit">Crear Producto</Button>
             </form>
           </Box>
         </Grid>
@@ -75,6 +85,7 @@ export function Header() {
                   <TableCell>Id</TableCell>
                   <TableCell>Nombre</TableCell>
                   <TableCell>Precio</TableCell>
+                  <TableCell>Cantidad</TableCell>
                   <TableCell>Status</TableCell>
                   <TableCell>Comprado</TableCell>
                   <TableCell>Eliminar</TableCell>
@@ -86,6 +97,7 @@ export function Header() {
                     <TableCell>{producto.id}</TableCell>
                     <TableCell>{producto.nombre}</TableCell>
                     <TableCell>{producto.precio}</TableCell>
+                    <TableCell>{producto.cantidad}</TableCell>
                     <TableCell>{producto.status ? "Comprado" : "No comprado"}</TableCell>
                     <TableCell>
                       <Checkbox

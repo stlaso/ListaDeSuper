@@ -21,7 +21,7 @@ export function Carrito() {
     },
   });
   const calcularTotal = () => {
-    return carrito.reduce((total, producto) => total + (+producto.precio), 0);
+    return carrito.reduce((total, producto) => total + ((+producto.precio)*producto.cantidad), 0);
   };
 
   return (
@@ -41,6 +41,7 @@ export function Carrito() {
                   <TableCell>Id</TableCell>
                   <TableCell>Nombre</TableCell>
                   <TableCell>Precio</TableCell>
+                  <TableCell>Cantidad</TableCell>
                   <TableCell>Status</TableCell>
                 </TableRow>
               </TableHead>
@@ -50,6 +51,7 @@ export function Carrito() {
                     <TableCell>{producto.id}</TableCell>
                     <TableCell>{producto.nombre}</TableCell>
                     <TableCell>{producto.precio}</TableCell>
+                    <TableCell>{producto.cantidad}</TableCell>
                     <TableCell>{producto.status ? "Comprado" : "No comprado"}</TableCell>
                   </TableRow>
                 ))}
