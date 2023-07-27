@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux"
-import React, { useState } from 'react';
+import  { useState } from 'react';
 import { addProducto, changeStatus,DeleteProducto  } from "../redux/productoSlice";
 import { useDispatch } from "react-redux";
 import Grid from '@mui/material/Grid'; 
