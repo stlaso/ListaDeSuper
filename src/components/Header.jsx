@@ -87,7 +87,7 @@ export function Header() {
                   <TableCell>Precio</TableCell>
                   <TableCell>Cantidad</TableCell>
                   <TableCell>Status</TableCell>
-                  <TableCell>Comprado</TableCell>
+                  <TableCell>Agregar al carrito</TableCell>
                   <TableCell>Eliminar</TableCell>
                 </TableRow>
               </TableHead>
@@ -98,7 +98,7 @@ export function Header() {
                     <TableCell>{producto.nombre}</TableCell>
                     <TableCell>{producto.precio}</TableCell>
                     <TableCell>{producto.cantidad}</TableCell>
-                    <TableCell>{producto.status ? "Comprado" : "No comprado"}</TableCell>
+                    <TableCell>{producto.status ? "Agregado" : "No agregado"}</TableCell>
                     <TableCell>
                       <Checkbox
                         checked={producto.status}
